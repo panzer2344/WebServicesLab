@@ -5,16 +5,16 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.math.BigInteger;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
-
 
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Book {
 
     @XmlElement private BigInteger code;
-    @XmlElement private List<String> authors;
+    @XmlElement private LinkedList<String> authors;
     @XmlElement private int publishYear;
     @XmlElement private String publisherName;
     @XmlElement private String bookName;
@@ -36,7 +36,7 @@ public class Book {
         return authors;
     }
 
-    public Book setAuthors(List<String> authors) {
+    public Book setAuthors(LinkedList<String> authors) {
         this.authors = authors;
         return this;
     }
@@ -97,13 +97,13 @@ public class Book {
 
     @Override
     public String toString() {
-        return "Book{" +
-                "code='" + code + '\'' +
-                ", authors=" + authors +
-                ", publishYear=" + publishYear +
-                ", publisherName='" + publisherName + '\'' +
-                ", bookName='" + bookName + '\'' +
-                ", inStock=" + inStock +
+        return "Book{\n" +
+                "code='" + code + "\'\n" +
+                ", authors=" + authors + "\n" +
+                ", publishYear=" + publishYear + "n" +
+                ", publisherName='" + publisherName + "\'\n" +
+                ", bookName='" + bookName + "\'\n" +
+                ", inStock=" + inStock + "\n" +
                 '}';
     }
 }
